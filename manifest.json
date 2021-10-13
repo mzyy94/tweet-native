@@ -1,0 +1,26 @@
+{
+  "name": "tweet-native",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Open Tweet intent on native app automatically",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/intent/tweet?*"
+      ],
+      "js": [
+        "intent-hook.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_title": "Share website"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
